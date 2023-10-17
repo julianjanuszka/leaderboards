@@ -39,7 +39,7 @@ func main() {
 		}
 		key := fmt.Sprintf("leader:%d", submission.LevelID)
 
-		res := rdb.ZRangeWithScores(ctx, key, 0, 1)
+		res := rdb.ZRangeWithScores(ctx, key, 0, -1)
 		if res.Err() != nil {
 			c.JSON(500, gin.H{
 				"message": "Querying redis",
