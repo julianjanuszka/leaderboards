@@ -28,7 +28,7 @@ func main() {
 
 	r := gin.Default()
 
-	r.GET("/leaderboards/getleaders", func(c *gin.Context) {
+	r.POST("/leaderboards/getleaders", func(c *gin.Context) {
 		var submission GetLeadersByLevel
 		if err := c.BindJSON(&submission); err != nil {
 			c.JSON(400, gin.H{
